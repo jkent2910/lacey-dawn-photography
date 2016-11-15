@@ -84,7 +84,7 @@ and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2) {
 
   .navbar-header {
-    padding-bottom: 45px;
+    padding-bottom: 45px !important;
   }
 
   .contact-us {
@@ -98,7 +98,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   .left-nav-alignment {
-    margin-left: 0px;
+    margin-left: 0px !important;
+    margin-right: 30px !important;
+  }
+
+  .navbar-toggle {
+    margin-right: 55px;
   }
 
   body {
