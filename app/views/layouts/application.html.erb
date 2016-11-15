@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway" rel="stylesheet">
 </head>
 <body>
@@ -20,11 +21,11 @@
 				<a class="navbar-brand" href="#"><%= image_tag('LD_WATERMARK.png', class: 'img-thumbnail nav-image') %></a>
 			</div>
 
-			<div class="navbar-collapse collapse" style="margin-left: 450px;" dir="rtl">
+			<div class="navbar-collapse collapse left-nav-alignment" dir="rtl">
 				<ul id="menu" class="nav navbar-nav navbar-right">
 	            	<li class="active"><a href="#"><span class="nav-item">Home</span></a></li>
 	            	<li><a href="#"><span class="nav-item">About</span></a></li>
-	            	<li><a href="#"><span class="nav-item">Family</span></a></li>
+	            	<li><a href="/family"><span class="nav-item">Family</span></a></li>
 	            	<li><a href="#"><span class="nav-item">Newborns</span></a></li>
 	            	<li><a href="#"><span class="nav-item">Toddlers</span></a></li>
 	            	<li><a href="#"><span class="nav-item">Maternity</span></a></li>

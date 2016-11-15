@@ -72,3 +72,36 @@ body {
   padding-right: 200px;
   margin-bottom: 70px;
 }
+
+.left-nav-alignment {
+  margin-left: 450px !important;
+}
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+  .navbar-header {
+    padding-bottom: 45px;
+  }
+
+  .contact-us {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .nav-image {
+    height: 60px;
+    width: 175px;
+  }
+
+  .left-nav-alignment {
+    margin-left: 0px;
+  }
+
+  body {
+    margin-right: -50px;
+  }
+}
