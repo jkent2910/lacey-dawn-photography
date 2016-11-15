@@ -88,8 +88,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 
   .contact-us {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+
+  .get-in-touch {
+    margin-bottom: 125px;
+    margin-top: 0px;
   }
 
   .nav-image {
@@ -104,6 +109,15 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
   .navbar-toggle {
     margin-right: 55px;
+    padding: 15px 20px;
+  }
+
+  .philosophy-text {
+    font-size: 48px;
+  }
+
+  .philosophy-div {
+    width: 85%;
   }
 
   body {
