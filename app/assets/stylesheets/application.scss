@@ -16,9 +16,59 @@
 @import "bootstrap";
 @import "welcome";
 
-.navbar-custom {
-	background-color: #ffffff;
-	font-family: "Planet Light";
+body {
+  font-family: 'Raleway', sans-serif;
 }
 
+.navbar-custom {
+	background-color: #ffffff;
+}
 
+.nav-item {
+  font-size: 12px;
+}
+
+.nav-image {
+  height: 75px;
+  width: 165px;
+}
+
+.banner-image {
+  width: 100%;
+  height: 600px;
+}
+
+.banner-div {
+  margin-top: 100px;
+}
+
+.philosophy-text {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+}
+
+.philosophy-div {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.philosophy-detail-text {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.get-in-touch {
+  margin-top: 50px;
+  background-color: lightgrey;
+  width: 100%;
+}
+
+.contact-us {
+  padding-left: 200px;
+  padding-right: 200px;
+  margin-bottom: 70px;
+}

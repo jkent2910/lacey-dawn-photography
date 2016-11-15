@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway" rel="stylesheet">
 </head>
 <body>
 	<div class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
@@ -16,31 +17,41 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Lacey Dawn Photography</a>
+				<a class="navbar-brand" href="#"><%= image_tag('LD_WATERMARK.png', class: 'img-thumbnail nav-image') %></a>
 			</div>
 
 			<div class="navbar-collapse collapse" style="margin-left: 450px;" dir="rtl">
 				<ul id="menu" class="nav navbar-nav navbar-right">
-	            	<li class="active"><a href="#">Home</a></li>
-	            	<li><a href="#">About</a></li>
-	            	<li><a href="#">Blog</a></li>
-	            	<li><a href="#">Babies & Children</a></li>
-	            	<li><a href="#">Families</a></li>
-	            	<li><a href="#">Headshots</a></li>
-	            	<li><a href="#">Maternity</a></li>
-	            	<li><a href="#">Newborns</a></li>
-	            	<li><a href="#">Senior Portraits</a></li>
-	            	<li><a href="#">Weddings & Engagements</a></li>
-	            	<li><a href="#">F.A.Q</a></li>
-	            	<li><a href="#">Testimonials</a></li>
-	            	<li><a href="#">CONTACT</a></li>
-	            	<li><a href="#">Facebook</a></li>
+	            	<li class="active"><a href="#"><span class="nav-item">Home</span></a></li>
+	            	<li><a href="#"><span class="nav-item">About</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Family</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Newborns</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Toddlers</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Maternity</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Landscapes</span></a></li>
+	            	<li><a href="#"><span class="nav-item">City</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Engagements</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Weddings</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Seniors</span></a></li>
+                <li><a href="#"><span class="nav-item">Events</span></a></li>
+                <li><a href="#"><span class="nav-item">Mini-Sessions</span></a></li>
+                <li><a href="#"><span class="nav-item">Testimonials</span></a></li>
+	            	<li><a href="#"><span class="nav-item">Contact</span></a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 <%= yield %>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">1234 Main Street Des Moines, Iowa</a></li>
+        <li><a href="#">(123) 345-6789</a></li>
+        <li><a href="#">Lacey Dawn Photography © 2016</a></li>
+      </ul>
+    </div>
+  </nav>
 
 </body>
 </html>
