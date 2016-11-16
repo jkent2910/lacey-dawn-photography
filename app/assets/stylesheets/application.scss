@@ -67,6 +67,18 @@ body {
   width: 100%;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
+.lacey-photo {
+  height: 500px;
+}
+
+.about-text {
+  margin-bottom: 70px;
+}
+
 .contact-us {
   padding-left: 200px;
   padding-right: 200px;
@@ -75,6 +87,11 @@ body {
 
 .left-nav-alignment {
   margin-left: 450px !important;
+}
+
+.alert {
+  margin-bottom: 0px;
+  margin-top: 50px;
 }
 
 /* Portrait and Landscape */

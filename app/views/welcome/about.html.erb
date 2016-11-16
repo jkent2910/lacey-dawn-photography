@@ -1,0 +1,33 @@
+<div class="container banner-div">
+  <div class="philosophy-div">
+    <h1 class="philosophy-text">ABOUT ME</h1>
+    <div class="text-align-center">
+      <%= image_tag("lacey.jpg", class: 'lacey-photo') %>
+    </div>
+    <h5 class="philosophy-detail-text about-text">
+      Hi everyone! My name is Lacey. I am a mother of one amazing little boy! I have a huge passion for photography and I love being able to share my artistic abilities with each and all of my clients. Every photo captures a story and a memory.  A photo says more than  words ever will. I love capturing those special moments including the smiles, laughs, and tears that are most important to you. I was always “the one” in the family taking too many photos. It is a great honor to have my clients,  friends and family be able to contact me  and show those priceless memories  and assure those moments are never forgotten. Multiple memories are brought back to life. It is so amazing. I dedicate my ability and work tirelessly to make sure my clients are happy.  A piece of my heart grows with every individual I photograph as I watch your family grow and share your memories over the years.  I look forward to meeting you. I believe in creating a photography experience that is fun, easy and relaxed to obtain results in REAL photos that you’ll treasure FOREVER.
+    </h5>
+  </div>
+  <div class="container get-in-touch">
+    <h1 class="philosophy-text">Get in Touch</h1>
+      <%= form_tag(contacts_form_path, :method => 'post', :class => 'contact-us') do %>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Name</label>
+        <%= text_field_tag 'name', nil, {placeholder: "Name", class: "form-control", :required => 'required'} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <%= text_field_tag 'email', nil, {placeholder: "Email", class: "form-control"} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Phone number</label>
+        <%= text_field_tag 'phone', nil, {placeholder: "Phone", class: "form-control"} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Question or Comment</label>
+        <%= text_area_tag 'question', nil, {placeholder: "Question or Comment", class: "form-control"} %><br />
+      </div>
+        <%= submit_tag "Submit", class: 'btn btn-md btn-default' %>
+      <% end %>
+  </div>
+</div>
