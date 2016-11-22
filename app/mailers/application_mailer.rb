@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "contact-form@laceydawnphotography.com"
+  default from: "lacey.hike@gmail.com"
   layout 'mailer'
 end
