@@ -24,20 +24,18 @@
 			<div class="navbar-collapse collapse left-nav-alignment" dir="rtl">
 				<ul id="menu" class="nav navbar-nav navbar-right">
 	            	<li class="active"><a href="/"><span class="nav-item">Home</span></a></li>
-	            	<li><a href="/about"><span class="nav-item">About</span></a></li>
-	            	<li><a href="/family"><span class="nav-item">Family</span></a></li>
-	            	<li><a href="/newborns"><span class="nav-item">Newborns</span></a></li>
-	            	<li><a href="/toddlers"><span class="nav-item">Toddlers</span></a></li>
-	            	<li><a href="/maternity"><span class="nav-item">Maternity</span></a></li>
-	            	<li><a href="/landscapes"><span class="nav-item">Landscapes</span></a></li>
-	            	<li><a href="/city"><span class="nav-item">City</span></a></li>
-	            	<li><a href="/engagements"><span class="nav-item">Engagements</span></a></li>
-	            	<li><a href="/weddings"><span class="nav-item">Weddings</span></a></li>
-	            	<li><a href="/seniors"><span class="nav-item">Seniors</span></a></li>
-                <li><a href="/events"><span class="nav-item">Events</span></a></li>
-                <li><a href="/minisessions"><span class="nav-item">Mini-Sessions</span></a></li>
-                <li><a href="/testimonials"><span class="nav-item">Testimonials</span></a></li>
-                <li><a href="/pricing"><span class="nav-item">Pricing</span></a></li>
+	            	<li><%= link_to "About", about_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Family", family_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Maternity & Newborns", newborns_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Children", children_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Landscapes", landscapes_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "City", city_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Engagements", engagements_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Weddings", weddings_path, class: 'nav-item', method: :get %></li>
+	            	<li><%= link_to "Seniors", seniors_path, class: 'nav-item', method: :get %></li>
+                <li><%= link_to "Events", events_path, class: 'nav-item', method: :get %></li>
+                <li><%= link_to "Reviews", testimonials_path, class: 'nav-item', method: :get %></li>
+                <li><%= link_to "Pricing", pricing_path, class: 'nav-item', method: :get %></li>
 				</ul>
 			</div>
 		</div>
@@ -47,9 +45,10 @@
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">1234 Main Street Des Moines, Iowa</a></li>
-        <li><a href="#">(123) 345-6789</a></li>
+        <li><a href="#">Lacey Dawn Photography 421 25th Street SE Altoona, IA 50009</a></li>
+        <li><a href="#">(515) 450-7856</a></li>
         <li><a href="#">Lacey Dawn Photography © 2016</a></li>
+        <li><a href="http://www.facebook.com/laceydawnphotography" class="#">www.facebook.com/LaceyDawnPhotography</a></li>
       </ul>
     </div>
   </nav>

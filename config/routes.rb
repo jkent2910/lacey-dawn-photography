@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/family', to: 'welcome#family', as: 'family'
   get '/about', to: 'welcome#about', as: 'about'
   get '/newborns', to: 'welcome#newborns', as: 'newborns'
-  get '/toddlers', to: 'welcome#toddlers', as: 'toddlers'
+  get '/children', to: 'welcome#children', as: 'children'
   get '/maternity', to: 'welcome#maternity', as: 'maternity'
   get '/landscapes', to: 'welcome#landscapes', as: 'landscapes'
   get '/city', to: 'welcome#city', as: 'city'

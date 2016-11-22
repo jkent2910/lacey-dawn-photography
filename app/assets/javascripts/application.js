@@ -17,3 +17,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+    $('.carousel').carousel({
+        interval: 2000
+    });
+});
+

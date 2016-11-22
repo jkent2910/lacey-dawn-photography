@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
   def newborns
   end
 
-  def toddlers
+  def children
   end
 
   def maternity
