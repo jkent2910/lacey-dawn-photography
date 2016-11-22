@@ -23,5 +23,15 @@ $(document).ready(function() {
     $('.carousel').carousel({
         interval: 2000
     });
+    document.onmousedown=disableclick;
+    status="This image is Copyrighted";
 });
 
+function disableclick(event)
+{
+    if(event.button==2)
+    {
+        alert(status);
+        return false;
+    }
+}
