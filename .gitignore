@@ -29,3 +29,5 @@
 
 #Config files
 /config/local_env.yml
+
+.idea

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'welcome/index'
   get '/family', to: 'welcome#family', as: 'family'
   get '/about', to: 'welcome#about', as: 'about'
@@ -17,7 +18,16 @@ Rails.application.routes.draw do
   get '/contact_me', to: 'welcome#contact_me', as: 'contact_me'
 
   post '/welcome/contacts' => 'welcome#contact', as: 'contacts_form'
+  get '/dashboard' => 'welcome#dashboard', as: 'dashboard'
 
   root 'welcome#index'
+
+  resources :clients do
+    member do
+      get :show_client_photos
+      get :favorite_picture
+      get :unfavorite_picture
+    end
+  end
 
 end

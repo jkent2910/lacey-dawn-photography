@@ -1,0 +1,17 @@
+<div class="container dashboard-container">
+  <div class="row">
+    <% @pictures.each do |p| %>
+        <div class="col-md-4">
+          <%= image_tag(p.image, class: 'thumb-pic') %>
+          <% if p.favorite? %>
+              <br /><br /><%= link_to unfavorite_picture_client_path(@client, picture_id: p.id), class: "btn btn-default" do   %>
+                  <%= fa_icon("ban") %> Unfavorite<% end %>
+        <% else %>
+              <br /><br /><%= link_to favorite_picture_client_path(@client, picture_id: p.id), class: "btn btn-default" do %>
+                  <%= fa_icon("heart heart-color") %> Favorite <% end %>
+          <% end %>
+        </div>
+    <% end %>
+
+  </div>
+</div>

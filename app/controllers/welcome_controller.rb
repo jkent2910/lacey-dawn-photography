@@ -53,4 +53,8 @@ class WelcomeController < ApplicationController
     redirect_to root_path, notice: "Great!  We will get back to you shortly."
   end
 
+  def dashboard
+    @clients = Client.all
+  end
+
 end
