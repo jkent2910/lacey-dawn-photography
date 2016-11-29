@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'font-awesome-rails'
