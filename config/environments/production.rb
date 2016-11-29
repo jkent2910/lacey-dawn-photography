@@ -81,7 +81,7 @@ Rails.application.configure do
       :storage => :s3,
       :s3_permissions => 'public-read',
       :s3_credentials => {
-          :bucket => ENV['S3_DEVELOPMENT_BUCKET'],
+          :bucket => ENV['AWS_BUCKET'],
           :access_key_id => ENV['ACCESS_KEY_ID']
       }
   }
