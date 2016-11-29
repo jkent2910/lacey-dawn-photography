@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
 
   before_action :set_client, only: [:show, :edit, :update, :destroy, :show_client_photos, :favorite_picture, :unfavorite_picture]
-  before_action :authenticate_user!, except: [:show_client_photos]
+  before_action :authenticate_user!, except: [:show_client_photos, :favorite_picture, :unfavorite_picture]
   before_filter :authenticate, only: [:show_client_photos]
 
   def index

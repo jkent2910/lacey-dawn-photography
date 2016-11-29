@@ -5,6 +5,9 @@
   <h3>Pictures</h3>
   <% @pictures.each do |p| %>
     <%= image_tag(p.image, class: 'thumb-pic') %>
+    <% if p.favorite? %>
+      <p><%= fa_icon("heart", class: "fa-heart-color") %></p>
+    <% end %>
   <% end %>
 
   <div class="row"><br />
