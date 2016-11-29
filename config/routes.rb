@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get '/add_to_cart' => 'items#add_to_cart', as: 'add_to_cart'
   post '/add_items_to_cart' => 'items#add_items_to_cart', as: 'add_items_to_cart'
   get '/view_cart' => 'items#view_cart', as: 'view_cart'
+  get '/remove_cart_item' => 'items#remove_cart_item', as: 'remove_cart_item'
+  get '/send_cart' => 'items#send_cart', as: 'send_cart'
 
   resources :items
 

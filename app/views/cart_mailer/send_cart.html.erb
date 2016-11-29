@@ -1,0 +1,35 @@
+<div class="container">
+  <%= @client.first_name %> <%= @client.last_name %> has submitted the following items
+  <table class="table">
+    <tr>
+      <th>
+        Item Name
+      </th>
+      <th>
+        Item Quantity
+      </th>
+      <th>
+        Item Price
+      </th>
+      <th>
+        Picture ID
+      </th>
+    </tr>
+    <% @carts.each do |i| %>
+        <tr>
+          <td>
+            <%= Item.find(i.item_id).name %>
+          </td>
+          <td>
+            <%= i.item_quantity %>
+          </td>
+          <td>
+            <%= Item.find(i.item_id).price %>
+          </td>
+          <td>
+            <%= i.picture_id %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>

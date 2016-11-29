@@ -16,6 +16,7 @@
         <%= select_tag 'quantity', options_for_select(0..10), {include_blank: true} %><br />
       </div>
       <%= hidden_field_tag('client_id', @client.id) %>
+      <%= hidden_field_tag('picture_id', @picture.id) %>
       <%= submit_tag "Add to Cart", class: 'btn btn-md btn-default' %>
   <% end %>
 

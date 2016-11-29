@@ -56,15 +56,31 @@ class ItemsController < ApplicationController
     item = Item.find(params[:item])
     quantity = params[:quantity]
     client = Client.find(params[:client_id])
+    picture = params[:picture_id]
 
-    client.carts.create(item_id: item.id, item_quantity: quantity, client_id: client.id)
+    client.carts.create(item_id: item.id, item_quantity: quantity, client_id: client.id, picture_id: picture)
 
     redirect_to show_client_photos_client_path(client), notice: "Item added to cart!"
   end
 
   def view_cart
+    @client = Client.find(params[:client_id])
+    @items = @client.carts
+  end
+
+  def send_cart
     client = Client.find(params[:client_id])
-    @items = client.carts 
+    CartMailer.send_cart(client).deliver_now
+
+    redirect_to show_client_photos_client_path(client), notice: "Cart sent!  We'll be in touch shortly"
+  end
+
+  def remove_cart_item
+    cart = Cart.find(params[:cart_id])
+    cart.destroy
+    client = Client.find(params[:client_id])
+
+    redirect_to view_cart_path(client_id: client), notice: "Removed"
   end
 
   private

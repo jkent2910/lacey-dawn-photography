@@ -1,7 +1,8 @@
-<div class="container main-container">
+<div class="container other-container">
   <div class="row">
     <div class="col-md-12 text-center">
       <h2>Your Cart</h2>
+      <%= link_to "Send Cart", send_cart_path(client_id: @client.id), class: "btn btn-primary" %>
     </div>
   </div>
 </div>
@@ -15,6 +16,9 @@
         Item Quantity
       </th>
       <th>
+        Item Price
+      </th>
+      <th>
         Picture
       </th>
       <th>
@@ -24,19 +28,19 @@
     <% @items.each do |i| %>
         <tr>
           <td>
-            <%= i.id %>
+            <%= Item.find(i.item_id).name %>
           </td>
           <td>
-            <%= i.name %>
+            <%= i.item_quantity %>
           </td>
           <td>
-            <%= i.price %>
+            <%= Item.find(i.item_id).price %>
           </td>
           <td>
-            <%= link_to "Edit", edit_item_path(i), class: "btn btn-default" %>
+            <%= image_tag(Picture.find(i.picture_id).image(:thumb)) %>
           </td>
           <td>
-            <%= link_to "Delete", item_path(i), method: :delete, class: "btn btn-danger" %>
+            <%= link_to "Remove from cart", remove_cart_item_path(cart_id: i.id, client_id: @client.id), class: "btn btn-danger" %>
           </td>
         </tr>
     <% end %>
