@@ -30,4 +30,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/add_to_cart' => 'items#add_to_cart', as: 'add_to_cart'
+  post '/add_items_to_cart' => 'items#add_items_to_cart', as: 'add_items_to_cart'
+  get '/view_cart' => 'items#view_cart', as: 'view_cart'
+
+  resources :items
+
 end

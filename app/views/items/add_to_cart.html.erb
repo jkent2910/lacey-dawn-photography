@@ -1,0 +1,46 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>What item would you like to add?</h2>
+      <h4>Picture selected:</h4>
+      <%= image_tag(@picture.image(:thumb)) %>
+    </div>
+  </div>
+  <%= form_tag(add_items_to_cart_path, :method => 'post', :class => 'contact-us') do %>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Name</label>
+        <%= select_tag 'item', options_from_collection_for_select(@items, "id", "name"), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Quantity</label>
+        <%= select_tag 'quantity', options_for_select(0..10), {include_blank: true} %><br />
+      </div>
+      <%= hidden_field_tag('client_id', @client.id) %>
+      <%= submit_tag "Add to Cart", class: 'btn btn-md btn-default' %>
+  <% end %>
+
+  <div class="container">
+    <h2>Pricing</h2>
+    <table class="table">
+      <tr>
+        <th>
+          Item Name
+        </th>
+        <th>
+          Item Price
+        </th>
+      </tr>
+      <% @items.each do |i| %>
+          <tr>
+            <td>
+              <%= i.name %>
+            </td>
+            <td>
+              <%= i.price %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>

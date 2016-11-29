@@ -74,7 +74,6 @@ class ClientsController < ApplicationController
     redirect_to show_client_photos_client_path, notice: "Favorite Removed!"
   end
 
-
   private
 
   def authenticate

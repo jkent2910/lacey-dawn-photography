@@ -1,8 +1,14 @@
 <div class="container dashboard-container">
   <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Your Photos</h2>
+      <%= link_to "View Cart", view_cart_path(client_id: @client.id), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row">
     <% @pictures.each do |p| %>
-        <div class="col-md-4">
-          <%= image_tag(p.image, class: 'thumb-pic') %>
+        <div class="col-md-4 little-margin">
+          <%= image_tag(p.image(:medium), class: 'img-responsive img-thumbnail') %>
           <% if p.favorite? %>
               <br /><br /><%= link_to unfavorite_picture_client_path(@client, picture_id: p.id), class: "btn btn-default" do   %>
                   <%= fa_icon("ban") %> Unfavorite<% end %>
@@ -10,8 +16,9 @@
               <br /><br /><%= link_to favorite_picture_client_path(@client, picture_id: p.id), class: "btn btn-default" do %>
                   <%= fa_icon("heart heart-color") %> Favorite <% end %>
           <% end %>
+          <%= link_to add_to_cart_path(picture_id: p.id, client_id: @client.id), class: "btn btn-default" do %>
+            <%= fa_icon("shopping-cart") %>Add to Cart <% end %>
         </div>
     <% end %>
-
   </div>
 </div>

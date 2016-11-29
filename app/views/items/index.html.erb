@@ -1,0 +1,50 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Items</h2>
+    </div>
+    <div class="col-md-12 text-center">
+      <%= link_to "Add Item", new_item_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>
+        Item ID
+      </th>
+      <th>
+        Item Name
+      </th>
+      <th>
+        Item Price
+      </th>
+      <th>
+        Edit Item
+      </th>
+      <th>
+        Delete Item
+      </th>
+    </tr>
+    <% @items.each do |i| %>
+        <tr>
+          <td>
+            <%= i.id %>
+          </td>
+          <td>
+            <%= i.name %>
+          </td>
+          <td>
+            <%= i.price %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_item_path(i), class: "btn btn-default" %>
+          </td>
+          <td>
+            <%= link_to "Delete", item_path(i), method: :delete, class: "btn btn-danger" %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
