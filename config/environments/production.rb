@@ -94,6 +94,7 @@ Rails.application.configure do
       :s3_credentials => {
           :bucket => ENV['S3_PRODUCTION_BUCKET'],
           :access_key_id => ENV['ACCESS_KEY_ID'],
+          :s3_region => ENV['AWS_REGION'],
           :secret_access_key => ENV['SECRET_ACCESS_KEY_ID']
       }
   }
