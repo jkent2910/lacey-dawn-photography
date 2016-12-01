@@ -12,6 +12,12 @@
             Session Name
           </th>
           <th>
+            URL To Give Client
+          </th>
+          <th>
+            Client Password
+          </th>
+          <th>
             View Client
           </th>
           <th>
@@ -28,6 +34,12 @@
               </td>
               <td>
                 <%= c.session_name %>
+              </td>
+              <td>
+                www.laceydawnphotography.com/clients/<%=c.id%>/show_client_photos
+              </td>
+              <td>
+                <%= c.client_password %>
               </td>
               <td>
                 <%= link_to "View", client_path(c), class: "btn btn-default", method: :get %>
