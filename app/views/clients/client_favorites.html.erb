@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <h2><%= @client.first_name %> <%= @client.last_name %> | Session: <%= @client.session_name %></h2>
+      <h3>Your Favorites</h3>
       <ul class="nav nav-tabs">
         <li role="presentation" class="active"><%= link_to "Home", show_client_photos_client_path(@client), class: '#' %></li>
         <li role="presentation"><%= link_to "Products", client_items_path(client_id: @client), class: '#' %></li>
@@ -17,12 +18,12 @@
           <% if p.favorite? %>
               <br /><br /><%= link_to unfavorite_picture_client_path(@client, picture_id: p.id), class: "btn btn-default" do   %>
                   <%= fa_icon("ban") %> Unfavorite<% end %>
-        <% else %>
+          <% else %>
               <br /><br /><%= link_to favorite_picture_client_path(@client, picture_id: p.id), class: "btn btn-default" do %>
                   <%= fa_icon("heart heart-color") %> Favorite <% end %>
           <% end %>
           <%= link_to add_to_cart_path(picture_id: p.id, client_id: @client.id), class: "btn btn-default" do %>
-            <%= fa_icon("shopping-cart") %>Add to Cart <% end %>
+              <%= fa_icon("shopping-cart") %>Add to Cart <% end %>
         </div>
     <% end %>
   </div>

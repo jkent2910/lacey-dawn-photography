@@ -1,0 +1,34 @@
+<div class="container dashboard-container client-photos">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Products</h2>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><%= link_to "Home", show_client_photos_client_path(@client), class: '#' %></li>
+        <li role="presentation"><%= link_to "Products", client_items_path(client_id: @client), class: '#' %></li>
+        <li role="presentation"><%= link_to "Favorites", client_favorites_client_path(@client), class: '#' %></li>
+        <li role="presentation"><%= link_to "Cart", view_cart_path(client_id: @client.id), class: '#' %></li>
+      </ul>
+    </div>
+  </div>
+  <table class="table">
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Add To Cart
+      </th>
+    </tr>
+    <% @items.each do |i| %>
+        <tr>
+          <td>
+            <%= i.name %>
+          </td>
+          <td>
+            <%= link_to add_products_to_cart_path(item_id: i.id, client_id: @client.id), class: "btn btn-default" do %>
+                <%= fa_icon("shopping-cart") %>Add to Cart <% end %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>

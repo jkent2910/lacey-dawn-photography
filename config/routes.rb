@@ -27,14 +27,17 @@ Rails.application.routes.draw do
       get :show_client_photos
       get :favorite_picture
       get :unfavorite_picture
+      get :client_favorites
     end
   end
 
   get '/add_to_cart' => 'items#add_to_cart', as: 'add_to_cart'
   post '/add_items_to_cart' => 'items#add_items_to_cart', as: 'add_items_to_cart'
+  get '/add_products_to_cart' => 'items#add_products_to_cart', as: 'add_products_to_cart'
   get '/view_cart' => 'items#view_cart', as: 'view_cart'
   get '/remove_cart_item' => 'items#remove_cart_item', as: 'remove_cart_item'
   get '/send_cart' => 'items#send_cart', as: 'send_cart'
+  get '/client_items' => 'items#client_items', as: 'client_items'
 
   resources :items
 

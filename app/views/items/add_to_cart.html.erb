@@ -1,47 +1,53 @@
-<div class="container main-container">
+<div class="container main-container client-photos">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h2>What item would you like to add?</h2>
       <h4>Picture selected:</h4>
-      <%= image_tag(@picture.image(:thumb)) %>
+      <%= image_tag(@picture.image(:medium)) %>
     </div>
   </div>
   <%= form_tag(add_items_to_cart_path, :method => 'post', :class => 'contact-us') do %>
       <div class="form-group">
-        <label for="exampleInputPassword1">Name</label>
-        <%= select_tag 'item', options_from_collection_for_select(@items, "id", "name"), {include_blank: true}%><br />
-      </div>
-      <div class="form-group">
         <label for="exampleInputEmail1">Quantity</label>
         <%= select_tag 'quantity', options_for_select(0..10), {include_blank: true} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">E-Surface (matte)</label>
+        <%= select_tag 'esurface', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Metalic Print (gloss with silvery finish)</label>
+        <%= select_tag 'metalic', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Canvas Wraps 1.5" Deep</label>
+        <%= select_tag 'canvaswrap15', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Canvas Wraps 2.5" Deep</label>
+        <%= select_tag 'canvaswrap25', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Bamboo Mounts</label>
+        <%= select_tag 'bamboo', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Metal Prints</label>
+        <%= select_tag 'metal', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Curve Metal Prints</label>
+        <%= select_tag 'curvemetal', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Float Wraps 3/4" deep</label>
+        <%= select_tag 'float34', options_for_select(photo_options), {include_blank: true}%><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Float Wraps 1 1/2" deep</label>
+        <%= select_tag 'float15', options_for_select(photo_options), {include_blank: true}%><br />
       </div>
       <%= hidden_field_tag('client_id', @client.id) %>
       <%= hidden_field_tag('picture_id', @picture.id) %>
       <%= submit_tag "Add to Cart", class: 'btn btn-md btn-default' %>
   <% end %>
-
-  <div class="container">
-    <h2>Pricing</h2>
-    <table class="table">
-      <tr>
-        <th>
-          Item Name
-        </th>
-        <th>
-          Item Price
-        </th>
-      </tr>
-      <% @items.each do |i| %>
-          <tr>
-            <td>
-              <%= i.name %>
-            </td>
-            <td>
-              <%= i.price %>
-            </td>
-          </tr>
-      <% end %>
-    </table>
-  </div>
-
 </div>

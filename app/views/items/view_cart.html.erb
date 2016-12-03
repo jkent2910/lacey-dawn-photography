@@ -1,13 +1,17 @@
-<div class="container other-container">
+<div class="container other-container client-photos">
   <div class="row">
     <div class="col-md-12 text-center">
       <h2>Your Cart</h2>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><%= link_to "Home", show_client_photos_client_path(@client), class: '#' %></li>
+        <li role="presentation"><%= link_to "Products", client_items_path(client_id: @client), class: '#' %></li>
+        <li role="presentation"><%= link_to "Favorites", client_favorites_client_path(@client), class: '#' %></li>
+        <li role="presentation"><%= link_to "Cart", view_cart_path(client_id: @client.id), class: '#' %></li>
+      </ul><br />
       <%= link_to "Send Cart", send_cart_path(client_id: @client.id), class: "btn btn-primary" %>
       <p>Clicking this button will send Lacey an e-mail with what's in your cart.  She'll be in touch shortly to finalize your order!</p>
     </div>
   </div>
-</div>
-<div class="container other-container">
   <table class="table">
     <tr>
       <th>
@@ -29,16 +33,21 @@
     <% @items.each do |i| %>
         <tr>
           <td>
+            <% unless i.photo_type.blank? %>
+                <%= i.photo_type %>
+            <% end %>
             <%= Item.find(i.item_id).name %>
           </td>
           <td>
-            <%= i.item_quantity %>
+            <%= i.item_quantity rescue "" %>
           </td>
           <td>
-            <%= Item.find(i.item_id).price %>
+            <%= Item.find(i.item_id).price rescue "" %>
           </td>
           <td>
+            <% unless i.picture_id.nil? %>
             <%= image_tag(Picture.find(i.picture_id).image(:thumb)) %>
+            <% end %>
           </td>
           <td>
             <%= link_to "Remove from cart", remove_cart_item_path(cart_id: i.id, client_id: @client.id), class: "btn btn-danger" %>

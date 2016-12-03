@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
 
-  before_action :set_client, only: [:show, :edit, :update, :destroy, :show_client_photos, :favorite_picture, :unfavorite_picture]
-  before_action :authenticate_user!, except: [:show_client_photos, :favorite_picture, :unfavorite_picture]
+  before_action :set_client, only: [:show, :edit, :update, :destroy, :show_client_photos, :favorite_picture, :unfavorite_picture, :client_favorites]
+  before_action :authenticate_user!, except: [:show_client_photos, :favorite_picture, :unfavorite_picture, :client_favorites]
   before_filter :authenticate, only: [:show_client_photos]
 
   def index
@@ -72,6 +72,10 @@ class ClientsController < ApplicationController
     picture = Picture.find(params[:picture_id])
     picture.update_attributes(favorite: false)
     redirect_to show_client_photos_client_path, notice: "Favorite Removed!"
+  end
+
+  def client_favorites
+    @pictures = @client.pictures.where(favorite: true)
   end
 
   private
