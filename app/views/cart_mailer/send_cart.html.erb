@@ -21,6 +21,7 @@
             <% if i.photo_type.nil? %>
                 <%= Item.find(i.item_id).name %>
             <% else %>
+                Presentation: <%= i.item_presentation rescue "" %> <br />
                 Print Surface: <%= i.item_print_surface rescue "" %> <br />
                 Protective Coating: <%= i.item_coating rescue "" %> <br />
                 Texture: <%= i.item_texture rescue "" %> <br />

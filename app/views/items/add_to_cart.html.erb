@@ -11,6 +11,45 @@
         <%= select_tag 'quantity', options_for_select(0..10), {include_blank: true} %><br />
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">Presentation</label>
+        <%= select_tag 'presentation', options_for_select(presentation_options), {include_blank: true} %><br />
+        Boutique Packaging
+        <%= image_tag("pres-boutique.png", class: 'item-small') %><br />
+        Boutique Photo Packaging can be added to most standard size print orders for the perfect finishing touch.
+
+        Available in varying sizes and depths to accommodate a wide range of orders. Boutique Packaging can easily be chosen in the cart when ordering, and is especially useful for Drop Ship orders. Select your desired color option and we will choose the size packaging that best fits your order.
+        <br />
+        Wood Box
+        <%= image_tag("pres-wood.png", class: 'item-small') %><br />
+        Bring a naturally elegant presentation to your clients with Engraved Wood Boxes.
+
+        Customizable Wood Boxes feature your photos or artwork printed directly onto the lid, or engraved with your special message or logo. Available in Natural or White Finish and various sizes to accommodate a wide range of print types, including MetalPrints, mounted or unmounted Photographic Prints, and more. The optional false bottom is perfect for adding a Bamboo Display Stand or storing personal keepsakes.
+        <br />
+        Bay Box
+        <%= image_tag("pres-bay.png", class: 'item-small') %><br />
+        Store your memories and enhance your presentation with our customizable boxes.
+
+        Our custom image boxes are available in assorted sizes and varying depths to suit a wide range of album sizes and print quantities. They can be created with a Leatherette, Linen, Fabric or Photo Wrap Cover, and an optional fabric or image panel on the inside cover. Concealed magnets keep boxes closed, but easy to open. You can also add an optional rubber hub to the inside lid of 5x7 boxes for including a CD or DVD with your prints.
+
+
+        <br />
+        Image Folio
+        <%= image_tag("pres-imagefolio.png", class: 'item-small') %><br />
+        Present and display your photos in a beautiful and sturdy book-like format.
+
+        Perfect for desktop displays, model presentations, menus, and more! Image Folios are designed to be a high-quality, customizable way to present and display small number of prints in exceptional style. Every aspect of your Image Folio can be personalized.
+        <br />
+        CD/DVD
+        <%= image_tag("pres-cd.png", class: 'item-small') %><br />
+        Dress up your disc with custom CD/DVD Cases and Printed DVDs!
+
+        Custom CD/DVD Cases are available in Single, Double, or Triple capacity, with a wide variety of customization options. Created Printed DVDs using our free templates or your own artwork for the perfect finishing touch.
+        <br />
+        USB Cases & Drives
+        <%= image_tag("pres-usb.png", class: 'item-small') %><br />
+        USB Cases and Engraved USB Drives are a perfect way to present your image files to your clients. You can also coordinate your USB Case Cover with your Pacific Album for a custom presentation that is sure to impress your clients. Cases can hold 1 or 2 USB Drives in the neoprene-like holder. Drives can be engraved with your choice of text or logo artwork on one or both sides of the drive.
+      </div>
+      <div class="form-group">
         <label for="exampleInputPassword1">Print Surface</label>
         <%= select_tag 'printsurface', options_for_select(surface_options), {include_blank: true}%><br />
       </div>

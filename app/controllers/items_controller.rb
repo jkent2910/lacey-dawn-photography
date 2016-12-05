@@ -65,7 +65,7 @@ class ItemsController < ApplicationController
     if params[:quantity].present?
       item = Item.find_by(name: params[:printsurface])
       client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: params[:printsurface], item_size: params[:size],
-                          item_print_surface: params[:printsurface], item_coating: params[:protectivecoating], item_textures: params[:texture], item_mounting: params[:mounting])
+                          item_print_surface: params[:printsurface], item_coating: params[:protectivecoating], item_presentation: params[:presentation], item_textures: params[:texture], item_mounting: params[:mounting])
       redirect_to show_client_photos_client_path(client), notice: "Item added to cart!"
     else
       redirect_to show_client_photos_client_path(client), notice: "You must enter a quantity to add to the cart"

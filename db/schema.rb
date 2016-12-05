@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204234550) do
+ActiveRecord::Schema.define(version: 20161205210714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161204234550) do
     t.string   "item_coating"
     t.string   "item_textures"
     t.string   "item_mounting"
+    t.string   "item_presentation"
   end
 
   add_index "carts", ["client_id"], name: "index_carts_on_client_id", using: :btree
