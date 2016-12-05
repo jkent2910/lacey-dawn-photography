@@ -11,41 +11,29 @@
         <%= select_tag 'quantity', options_for_select(0..10), {include_blank: true} %><br />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">E-Surface (matte)</label>
-        <%= select_tag 'esurface', options_for_select(photo_options), {include_blank: true}%><br />
+        <label for="exampleInputPassword1">Print Surface</label>
+        <%= select_tag 'printsurface', options_for_select(surface_options), {include_blank: true}%><br />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Metalic Print (gloss with silvery finish)</label>
-        <%= select_tag 'metalic', options_for_select(photo_options), {include_blank: true}%><br />
+        <label for="exampleInputPassword1">Protective Coating</label>
+        <%= select_tag 'protectivecoating', options_for_select(protective_coating_options), {include_blank: true}%><br />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Canvas Wraps 1.5" Deep</label>
-        <%= select_tag 'canvaswrap15', options_for_select(photo_options), {include_blank: true}%><br />
+        <label for="exampleInputPassword1">Textures</label>
+        <%= select_tag 'texture', options_for_select(texture_options), {include_blank: true}%><br />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Canvas Wraps 2.5" Deep</label>
-        <%= select_tag 'canvaswrap25', options_for_select(photo_options), {include_blank: true}%><br />
+        <label for="exampleInputPassword1">Mounting</label>
+        <%= select_tag 'mounting', options_for_select(mounting_options), {include_blank: true}%><br />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Bamboo Mounts</label>
-        <%= select_tag 'bamboo', options_for_select(photo_options), {include_blank: true}%><br />
+        <label for="exampleInputPassword1">Size</label>
+        <%= select_tag 'size', options_for_select(photo_options), {include_blank: true}%><br />
+        <p>Additional sizes are available -- <a href="mailto: lacey.hike@gmail.com?Subject=Additional Sizes Requested" target="_top">contact Lacey</a> for additional pricing information</p>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Metal Prints</label>
-        <%= select_tag 'metal', options_for_select(photo_options), {include_blank: true}%><br />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Curve Metal Prints</label>
-        <%= select_tag 'curvemetal', options_for_select(photo_options), {include_blank: true}%><br />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Float Wraps 3/4" deep</label>
-        <%= select_tag 'float34', options_for_select(photo_options), {include_blank: true}%><br />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Float Wraps 1 1/2" deep</label>
-        <%= select_tag 'float15', options_for_select(photo_options), {include_blank: true}%><br />
-      </div>
+
+      <ul><strong>Notes: <li>Custom borders are available at an additional cost upon request</li>
+      <li>Flash drives of the entire session are available for $150.00 and include all high resolution images with print release.</li></strong></ul>
       <%= hidden_field_tag('client_id', @client.id) %>
       <%= hidden_field_tag('picture_id', @picture.id) %>
       <%= submit_tag "Add to Cart", class: 'btn btn-md btn-default' %>

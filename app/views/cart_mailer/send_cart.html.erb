@@ -18,16 +18,26 @@
     <% @carts.each do |i| %>
         <tr>
           <td>
-            <%= Item.find(i.item_id).name %>
+            <% if i.photo_type.nil? %>
+                <%= Item.find(i.item_id).name %>
+            <% else %>
+                Print Surface: <%= i.item_print_surface rescue "" %> <br />
+                Protective Coating: <%= i.item_coating rescue "" %> <br />
+                Texture: <%= i.item_texture rescue "" %> <br />
+                Mounting: <%= i.item_mounting rescue "" %> <br />
+                Size: <%= i.item_size rescue "" %>
+            <% end %>
           </td>
           <td>
-            <%= i.item_quantity %>
+            <%= i.item_quantity rescue "" %>
           </td>
           <td>
-            <%= Item.find(i.item_id).price %>
+            <%= Item.find(i.item_id).price rescue "" %>
           </td>
           <td>
-            <%= i.picture_id %>
+            <% unless i.picture_id.nil? %>
+                <%= i.picture_id %>
+            <% end %>
           </td>
         </tr>
     <% end %>

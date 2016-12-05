@@ -42,6 +42,11 @@
   padding: 20px 20px 20px 20px;
 }
 
+.item-small {
+  height: 75px;
+  width: 75px;
+}
+
 @media only screen and (max-width: 425px) {
   .navbar-fixed-bottom {
     font-size: 12px;

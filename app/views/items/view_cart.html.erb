@@ -33,10 +33,15 @@
     <% @items.each do |i| %>
         <tr>
           <td>
-            <% unless i.photo_type.blank? %>
-                <%= i.photo_type %>
-            <% end %>
+            <% if i.photo_type.nil? %>
             <%= Item.find(i.item_id).name %>
+            <% else %>
+            Print Surface: <%= i.item_print_surface rescue "" %> <br />
+            Protective Coating: <%= i.item_coating rescue "" %> <br />
+            Texture: <%= i.item_texture rescue "" %> <br />
+            Mounting: <%= i.item_mounting rescue "" %> <br />
+            Size: <%= i.item_size rescue "" %>
+            <% end %>
           </td>
           <td>
             <%= i.item_quantity rescue "" %>

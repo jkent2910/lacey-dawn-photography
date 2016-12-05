@@ -7,4 +7,20 @@ module SelectionHelper
      "20 X 20 Square Print - $50.00", "30 X 30 Square Print - $80.00", "5 X 10 Wide Print - $8.00", "10 X 20 Wide Print - $25.00", "12 X 24 Wide Print - $30.00"]
   end
 
+  def surface_options
+    ["Lustre", "Glossy", "Metallic", "Deep Matte", "Pearl"]
+  end
+
+  def protective_coating_options
+    ["Lustre", "Glossy Coating & Satin", "Glossy Plastic Laminate"]
+  end
+
+  def texture_options
+    ["Canvas", "Pebble", "Linen"]
+  end
+
+  def mounting_options
+    ["Styrene", "Gator Board", "Masonite", "Other"]
+  end
+
 end

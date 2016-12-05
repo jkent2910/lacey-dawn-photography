@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <h2>Products</h2>
+      <h5>Note: Prices not included.  Lacey will contact you with pricing information once you've submitted your cart.</h5>
       <ul class="nav nav-tabs">
         <li role="presentation" class="active"><%= link_to "Home", show_client_photos_client_path(@client), class: '#' %></li>
         <li role="presentation"><%= link_to "Products", client_items_path(client_id: @client), class: '#' %></li>
@@ -23,6 +24,203 @@
         <tr>
           <td>
             <%= i.name %>
+            <% if i.name == "Wall Display - Metal" %>
+                <br />
+              <%= image_tag("wd-metalprint.png", class: 'item-small') %><br />
+                MetalPrints™ represent a new art medium for preserving photos by infusing dyes directly into specially coated aluminum sheets. Your images will take on a magical luminescence.
+
+                You've never seen a more brilliant and impressive print! Colors are vibrant and the luminescence is breathtaking. Detail and resolution are unsurpassed.
+
+                To complement this unique printing method, we have developed a wide variety of creative and modern ways to hang and display your MetalPrints™.
+            <% elsif i.name == "Wall Display - Acrylic" %>
+                <br />
+                <%= image_tag("wd-acrylic.png", class: 'item-small') %><br />
+                Photographic Prints and MetalPrints alike get extra depth and radiance when paired with our polished acrylic. Available in various widths and styles, in a wide range of sizes with a variety of contemporary mounting options.
+            <% elsif i.name == "Wall Display - Canvas" %>
+                <br />
+                <%= image_tag("wd-canvas.png", class: 'item-small') %><br />
+                With Bay Photo's Canvas Prints, you can display your photos like fine art. Canvas Prints can be made from prints on Professional Photo Papers bonded onto museum quality canvas, or Fine Art Prints printed directly onto the canvas material. The resulting prints can then be stretched and stapled onto a wood artists stretcher bar frame, mounted on gatorfoam board, or delivered loose (unmounted).
+            <% elsif i.name == "Wall Display - Framed" %>
+                <br />
+                <%= image_tag("wd-framed.png", class: 'item-small') %><br />
+                Choose from a variety of high quality wood or metal frames in a range of colors and moulding profiles. Frames can be added to Photographic Prints, Fine Art Prints, MetalPrints, and Canvas Prints.
+
+                Each moulding profile is carefully inspected to the gallery quality you expect from Bay Photo. Our genuine natural solid wood mouldings have a naturally rich finish and grain that can vary slightly from frame to frame. We take great care to ensure you frame is free of flaws and meets your high standards. This individual attention makes our frames all the more dramatic and rich, each a beautiful hand-made product you'll be proud to present and hang.
+            <% elsif i.name == "Wall Display - Wood" %>
+                <br />
+                <%= image_tag("wd-wood.png", class: 'item-small') %><br />
+                The grain and other characteristics of the wood shows through the light and white areas of the image for a natural warm tone and vintage feel. We can also print a white ink underlay on the wood to make the true colors of your image pop. Both of these options allow the beautiful wood texture to show on the surface of your print. Each wood print is unique and no two prints will look precisely alike.
+            <% elsif i.name == "Wall Display - Xpozer" %>
+                <br />
+                <%= image_tag("wd-xpozer.png", class: 'item-small') %><br />
+                Images are printed on striking Vivid Satin material. With no frame needed, they float away from the wall for a modern gallery look. The lightweight patented aluminum tension hanging system makes Xpozer highly portable and quick to assemble--perfect for shipping to clients or loved ones. Group multiple Xpozer Prints to create beautiful wall art displays, and change them up as often as you like with Xchange Prints.
+            <% elsif i.name == "Wall Display - Standout" %>
+                <br />
+                <%= image_tag("wd-standout.png", class: 'item-small') %><br />
+                Standout and Bamboo Mounts lend a clean, contemporary look to your wall displays. Prints can be mounted on a sustainably harvested solid Bamboo panel, or a thick lightweight backing available with Black, White, Brushed Stainless, or Maple finished edges that gives a contemporary look to unframed images.
+          <% elsif i.name == "Wall Display - Bamboo" %>
+                <br />
+                <%= image_tag("wd-standout.png", class: 'item-small') %><br />
+                Standout and Bamboo Mounts lend a clean, contemporary look to your wall displays. Prints can be mounted on a sustainably harvested solid Bamboo panel, or a thick lightweight backing available with Black, White, Brushed Stainless, or Maple finished edges that gives a contemporary look to unframed images.
+          <% elsif i.name == "Wall Display - intensiTiles" %>
+                <br />
+                <%= image_tag("wd-intensitile.png", class: 'item-small') %><br />
+                intensiTiles™ are a unique display option with swappable image tiles that float above the background.
+
+                The result is a highly flexible piece of 3-dimensional art that can be customized at any time.
+
+                Prints are made on your choice of Lustre, Glossy, or Metallic Photo Paper, then mounted on 1/4" black board with mounting blocks on the back of each mounted print. Our special hanging system makes it easy to swap out the top tiles as times change or children grow.
+          <% elsif i.name == "Wall Display - Thin Wraps" %>
+                <br />
+                <%= image_tag("wd-thinwrap.png", class: 'item-small') %><br />
+                First we make a print on your choice of Lustre Paper, Metallic Paper or Fine Art Canvas material. We then over-laminate the image with a soft Satin Laminate or a Glossy Laminate. The resulting product is then wrapped on Gatorboard, with or without a foam layer (Softop) in between the print and the board. For a striking effect, we apply a spacer (Float Mounting Block) to the back of the ThinWrap, which allows the image to be hung and appear to float from the wall. ThinWraps can also be ordered as designer Wall Clusters and Splits, or with an optional Easel Stand for tabletop display.
+            <% elsif i.name == "Wall Display - Clusters" %>
+                <br />
+                <%= image_tag("wd-cluster.png", class: 'item-small') %><br />
+                Wall Clusters and Split Packages are priced at 20% less than the individual print prices. The options and visual diagrams in Bay ROES make it easy to layout beautiful wall displays using individual images on each print, or one image across multiple prints.
+            <% elsif i.name == "Wall Display - Splits" %>
+                <br />
+                <%= image_tag("wd-cluster.png", class: 'item-small') %><br />
+                Wall Clusters and Split Packages are priced at 20% less than the individual print prices. The options and visual diagrams in Bay ROES make it easy to layout beautiful wall displays using individual images on each print, or one image across multiple prints.
+            <% elsif i.name == "Wall Display - Collage Wall" %>
+                <br />
+                <%= image_tag("wd-collage.png", class: 'item-small') %><br />
+                CollageWall photo displays include a complete system for precise and easy installation of beautiful photo walls from Prints on Photo Paper or MetalPrints.
+          <% elsif i.name == "Wall Display - Gallery Blocks" %>
+                <br />
+                <%= image_tag("wd-gallery.png", class: 'item-small') %><br />
+                Gallery Blocks bring together a unique combination of text, color, photos, and 3D construction to create a stunning display!
+
+                This innovative and unique product helps you showcase your creativity with multiple options. The floating blocks create impact when incorporated in the design of the base to make your images or text standout. Each individual block and backing can be printed with your own images and artwork, or choose from several pre-designed templates.
+            <% elsif i.name == "Presentation - Boutique Packaging" %>
+                <br />
+                <%= image_tag("pres-boutique.png", class: 'item-small') %><br />
+                Boutique Photo Packaging can be added to most standard size print orders for the perfect finishing touch.
+
+                Available in varying sizes and depths to accommodate a wide range of orders. Boutique Packaging can easily be chosen in the cart when ordering, and is especially useful for Drop Ship orders. Select your desired color option and we will choose the size packaging that best fits your order.
+            <% elsif i.name == "Presentation - Wood Box" %>
+                <br />
+                <%= image_tag("pres-wood.png", class: 'item-small') %><br />
+                Bring a naturally elegant presentation to your clients with Bay Photo's Printed and Engraved Wood Boxes.
+
+                Customizable Wood Boxes feature your photos or artwork printed directly onto the lid, or engraved with your special message or logo. Available in Natural or White Finish and various sizes to accommodate a wide range of print types, including MetalPrints, mounted or unmounted Photographic Prints, and more. The optional false bottom is perfect for adding a Bamboo Display Stand or storing personal keepsakes.
+            <% elsif i.name == "Presentation - Bay Box" %>
+                <br />
+                <%= image_tag("pres-bay.png", class: 'item-small') %><br />
+                Store your memories and enhance your presentation with our customizable BayBoxes.
+
+                Our custom image boxes are available in assorted sizes and varying depths to suit a wide range of album sizes and print quantities. They can be created with a Leatherette, Linen, Fabric or Photo Wrap Cover, and an optional fabric or image panel on the inside cover. Concealed magnets keep BayBoxes closed, but easy to open. You can also add an optional rubber hub to the inside lid of 5x7 BayBoxes for including a CD or DVD with your prints.
+
+
+          <% elsif i.name == "Presentation - Image Folio" %>
+                <br />
+                <%= image_tag("pres-imagefolio.png", class: 'item-small') %><br />
+                Present and display your photos in a beautiful and sturdy book-like format.
+
+                Perfect for desktop displays, model presentations, menus, and more! Image Folios are designed to be a high-quality, customizable way to present and display small number of prints in exceptional style. Every aspect of your Image Folio can be personalized.
+            <% elsif i.name == "Presentation - CD/DVD" %>
+                <br />
+                <%= image_tag("pres-cd.png", class: 'item-small') %><br />
+                Dress up your disc with custom CD/DVD Cases and Printed DVDs!
+
+                Custom CD/DVD Cases are available in Single, Double, or Triple capacity, with a wide variety of customization options. Created Printed DVDs using our free templates or your own artwork for the perfect finishing touch.
+            <% elsif i.name == "Presentation - USB Cases & Drives" %>
+                <br />
+                <%= image_tag("pres-usb.png", class: 'item-small') %><br />
+                USB Cases and Engraved USB Drives are a perfect way to present your image files to your clients. You can also coordinate your USB Case Cover with your Pacific Album for a custom presentation that is sure to impress your clients. Cases can hold 1 or 2 USB Drives in the neoprene-like holder. Drives can be engraved with your choice of text or logo artwork on one or both sides of the drive.
+            <% elsif i.name == "Books - Wave Books" %>
+                <br />
+                <%= image_tag("books-wave.png", class: 'item-small') %><br />
+                Our hardcover mini accordion-fold photo books are perfect for use as a tiny folio or brag book.
+
+                Printed on Indigo printers, the highest quality digital press printing technology available. Photos can be showcased as panoramic multi-panel spreads, or a series of photos side-by-side. Available in rectangular or square formats, with 10 image panels and a photo- or fabric-wrapped cover.
+            <% elsif i.name == "Books - Bay Books" %>
+                <br />
+                <%= image_tag("books-bay.png", class: 'item-small') %><br />
+                Our Hardcover and Softcover Photo Books are printed on Indigo printers, the highest quality digital press printing technology available. Perfect for Wedding Albums, Portrait Sessions, Seniors, Babies, Coffee Table Books, high-end Proof Books, Portfolios, and more.
+            <% elsif i.name == "Calendar - Photo Paper" %>
+                <br />
+                <%= image_tag("calendar-photo-paper.png", class: 'item-small') %><br />
+                Attractive and affordable, Photo Calendars make the perfect gift for clients, family and friends!
+
+                Available in Annual, Quarterly, and Monthly styles, in a variety of sizes and designs.
+            <% elsif i.name == "Calendar - Press Printed" %>
+                <br />
+                <%= image_tag("calendar-press-printed.png", class: 'item-small') %><br />
+                Our Calendars are printed using the highest quality press print technology available.
+
+                Choose from a variety of paper stocks, including UV Coated options. Drag-and-drop your images into our exclusive pre-made designs, or use your own artwork. Easily add your own text and additional images for a personalized calendar that is truly unique.
+            <% elsif i.name == "Cards - Press Printed" %>
+                <br />
+                <%= image_tag("card-press-printed.png", class: 'item-small') %><br />
+                Our premium cards stand above the rest, with the highest quality printing and the best range of sizes, formats, and options available.
+
+                Choose from 4 or 6 color printing and 12 different paper types, including UV Coated and environmentally-friendly "Green" options. Easily drag-and-drop your images into our professionally designed templates, or download our blank product templates to help you create your own artwork.
+            <% elsif i.name == "Cards - Photo Paper" %>
+                <br />
+                <%= image_tag("card-photopaper.png", class: 'item-small') %><br />
+                Classic photo greetings printed on your choice of professional photo papers.
+
+                We offer designs for holidays, anniversaries, engagements, weddings, baby/birth announcements, graduations, and much more. All cards can be personalized with your own text.
+
+                Envelopes are included with your card order. Choose optional Return Address Imprinting for a truly custom presentation.
+            <% elsif i.name == "Cards - Envelopes" %>
+                <br />
+                <%= image_tag("card-envelope.png", class: 'item-small') %><br />
+                Upgrade your card presentation with Premium Envelopes and Return Address Imprinting.
+
+                Premium Envelopes are available as an upgrade for 4x5½ and 5x7 Press Printed Cards. Return Address Imprinting can be ordered with Envelopes, or as an add-on for the Envelopes that are included in your Photo Greeting Card or Press Printed Card order.
+            <% elsif i.name == "Cards - Stickers & Labels" %>
+                <br />
+                <%= image_tag("card-stickers.png", class: 'item-small') %><br />
+                Add a custom touch to your packaging and more with unique Stickers and Labels.
+
+                Brand your packaging with Stickers in a variety of shapes and sizes, or use our Address Labels for that perfect finishing touch. Choose from a wide variety of professional designed templates, or use your own photos and artwork. The possibilities are endless!
+            <% elsif i.name == "Holiday - Cards" %>
+                <br />
+                <%= image_tag("holiday-cards.png", class: 'item-small') %><br />
+                Create beautiful custom Cards from your images and artwork.
+
+                We offer a large variety of sizes and formats, with hundreds of customizable designs for every occasion, including weddings, holidays, birthdays, graduation, birth announcements, and so much more. Choose from Press Printed Cards or classic Cards printed on Professional Photo Papers.
+            <% elsif i.name == "Holiday - Ornaments" %>
+                <br />
+                <%= image_tag("holiday-ornaments.png", class: 'item-small') %><br />
+                Create a wonderfully personal gift that they'll want to display long after the tree comes down.
+
+                Ornaments are an excellent choice for unique gift tags, name tags, and, of course, hanging on a tree! Photographers love using these as special gifts and add-ons for their clients. Drag-and-drop your images into our designs, or use your own artwork. Available in Metal or Bamboo, in a wide variety of shapes.
+            <% elsif i.name == "Holiday - Gift Tags & Holiday Magnets" %>
+                <br />
+                <%= image_tag("holiday-gifttags.png", class: 'item-small') %><br />
+                Add a custom touch to your gifts this holiday season with Photo Gift Tags and Photo Magnets!
+
+                Our Gift Tags are a fun way to personalize your gifts with a photo, while Photo Magnets make a special gift clients, friends, and family will want to display on their refrigerator or filing cabinet all year long! All products can be personalized with your own text and graphics, or you can use one of our ready-made templates.
+            <% elsif i.name == "Gifts - Magnets" %>
+                <br />
+                <%= image_tag("gift-magnet.png", class: 'item-small') %><br />
+                Our Photo Magnets are high-quality, so you can show your work at it's best, even at mini-size! Every metal surface is an excuse to display your photos and artwork.
+            <% elsif i.name == "Gifts - Ornaments" %>
+                <br />
+                <%= image_tag("gift-ornament.png", class: 'item-small') %><br />
+                Ornaments are an excellent choice for unique gift tags, name tags, and, of course, hanging on a tree! Photographers love using these as special gifts and add-ons for their clients. Drag-and-drop your images into our designs, or use your own artwork. Available in Metal or Bamboo, in a wide variety of shapes.
+            <% elsif i.name == "Gifts - Coasters" %>
+                <br />
+                <%= image_tag("gift-coaster.png", class: 'item-small') %><br />
+                Photo Coasters are available in two styles: Cork Bottom and Mahogany with Felt Feet. They may be ordered individually or as a pack of four. The optional Coaster Holder is made of Mahogany and holds four Coasters. Please note that this holder is only compatible with Cork Bottom Coasters due to the large size of the Mahogany Coasters.
+            <% elsif i.name == "Gifts - Bookmarks" %>
+                <br />
+                <%= image_tag("gift-bookmark.png", class: 'item-small') %><br />
+                Custom Bookmarks can be used as photo gifts, marketing tools, photographer add-ons, and more.
+
+                Printed using the highest quality press print technology available, with your choice of 4 or 6 color printing and 12 different paper types.
+            <% elsif i.name == "Gifts - Device Cases" %>
+                <br />
+                <%= image_tag("gift-device.png", class: 'item-small') %><br />
+                Phone and Tablet Cases are also a great add-on for Professional Photographers looking to provide their clients with an extra-special memento from their photo shoot.
+
+                Made from durable, high-quality Rubber or Hard Plastic depending on the style, and adorned with a vibrant MetalPrint infused on aluminum, or an HD Print (iPhone 6 and 6 Plus only). The print is scratch-resistant and easy to clean using commercial glass cleaner.
+
+
+          <% end %>
           </td>
           <td>
             <%= link_to add_products_to_cart_path(item_id: i.id, client_id: @client.id), class: "btn btn-default" do %>

@@ -62,52 +62,14 @@ class ItemsController < ApplicationController
     client = Client.find(params[:client_id])
     picture = params[:picture_id]
 
-    if params[:esurface].present?
-      item = Item.find_by(name: params[:esurface])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "E-Surface (matte)")
+    if params[:quantity].present?
+      item = Item.find_by(name: params[:printsurface])
+      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: params[:printsurface], item_size: params[:size],
+                          item_print_surface: params[:printsurface], item_coating: params[:protectivecoating], item_textures: params[:texture], item_mounting: params[:mounting])
+      redirect_to show_client_photos_client_path(client), notice: "Item added to cart!"
+    else
+      redirect_to show_client_photos_client_path(client), notice: "You must enter a quantity to add to the cart"
     end
-
-    if params[:metalic].present?
-      item = Item.find_by(name: params[:metalic])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Metalic Print (glossy with silvery finish")
-    end
-
-    if params[:canvaswrap15].present?
-      item = Item.find_by(name: params[:canvaswrap15])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Canvas Wraps - 1.5 Deep")
-    end
-
-    if params[:canvaswrap25].present?
-      item = Item.find_by(name: params[:canvaswrap25])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Canvas Wraps - 2.5 Deep")
-    end
-
-    if params[:bamboo].present?
-      item = Item.find_by(name: params[:bamboo])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Bamboo Mounts")
-    end
-
-    if params[:metal].present?
-      item = Item.find_by(name: params[:metal])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Metal Prints")
-    end
-
-    if params[:curvemetal].present?
-      item = Item.find_by(name: params[:curvemetal])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Curve Metal Prints")
-    end
-
-    if params[:float34].present?
-      item = Item.find_by(name: params[:float34])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Float Wraps 3/4 Deep")
-    end
-
-    if params[:float15].present?
-      item = Item.find_by(name: params[:float15])
-      client.carts.create(item_id: item.id, item_quantity: params[:quantity], client_id: client.id, picture_id: picture, photo_type: "Float Wraps 1/2 Deep")
-    end
-
-    redirect_to show_client_photos_client_path(client), notice: "Item added to cart!"
   end
 
   def add_products_to_cart

@@ -11,19 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203031520) do
+ActiveRecord::Schema.define(version: 20161204234550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carts", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "client_id"
     t.integer  "item_id"
     t.integer  "item_quantity"
     t.integer  "picture_id"
     t.string   "photo_type"
+    t.string   "item_size"
+    t.string   "item_print_surface"
+    t.string   "item_coating"
+    t.string   "item_textures"
+    t.string   "item_mounting"
   end
 
   add_index "carts", ["client_id"], name: "index_carts_on_client_id", using: :btree
