@@ -19,14 +19,13 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
 
-    if params[:images]
-      params[:images].each { |image|
-        @client.pictures.create(image: image)
-      }
-    end
-
     respond_to do |format|
       if @client.save
+        if params[:images]
+          params[:images].each { |image|
+            @client.pictures.create(image: image)
+          }
+        end
         format.html { redirect_to dashboard_path, notice: "Client created!" }
         format.json { render :show, status: :created, location: @client}
       else
